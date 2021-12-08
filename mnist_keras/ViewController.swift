@@ -17,11 +17,15 @@ public struct PixelData {
     var b: UInt8
 }
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UINavigationBarDelegate {
     
     @IBOutlet weak var canvas: UIImageView!
     @IBOutlet weak var predictLabel: UILabel!
-    @IBOutlet weak var reviesedImage: UIImageView!
+    @IBOutlet weak var revisedImage: UIImageView!
+    @IBOutlet weak var navbar: UINavigationBar!
+    
+    @IBOutlet weak var shootLabel: UILabel!
+    @IBOutlet weak var revisedLabel: UILabel!
     
     let imagePicker = UIImagePickerController()
     
@@ -32,6 +36,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePicker.delegate = self
         imagePicker.sourceType = .camera
         imagePicker.isEditing = false
+        
+        navbar.items![0].title = "Mnist_Model"
+        navbar.delegate = self
+        navbar.barTintColor = .rgb(red: 200, green: 200, blue: 200)
+        
+        shootLabel.text = ""
+        revisedLabel.text = ""
+    }
+    
+    func position(for bar: UIBarPositioning) -> UIBarPosition {
+        return .topAttached
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -39,28 +54,26 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         if let userimage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             
             canvas.image = userimage
+            shootLabel.text = "撮影画像"
             
             let imgSize: Int = 28
             let imageShape: CGSize = CGSize(width: imgSize, height: imgSize)
             let imagePixel = userimage.resize(to: imageShape).getPixelBuffer()
 
             let reverseimage = imageFromARGB32Bitmap(pixels: imagePixel, width: 28, height: 28)
-            reviesedImage.image = reverseimage
+            revisedImage.image = reverseimage
+            revisedLabel.text = "加工画像"
             
             guard let reverseimage = CIImage(image: reverseimage ?? userimage) else {
                 fatalError("Could not Convert")
             }
-            print(type(of: reverseimage))
             
             guard let ciimage = CIImage(image: userimage) else {
                 fatalError("Could not Convert")
             }
             
-//            imagePrediction(image: ciimage)
             imagePrediction(image: reverseimage)
         }
-        
-        
         
         dismiss(animated: true, completion: nil)
     }
@@ -92,7 +105,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             print(results)
             
             if let classification = results.first {
-                self.predictLabel.text = classification.identifier
+                self.predictLabel.text = "予測した数字は\(classification.identifier)です"
                 //                self.predictLabel.text = "\(classification.confidence)"
             }
         }
@@ -187,10 +200,7 @@ extension UIImage {
                 let g_uint_rev: UInt8 = uint_change - g_uint
                 let b_uint_rev: UInt8 = uint_change - b_uint
                 let a_uint_rev: UInt8 = uint_change - a_uint
-                
-                print(r_uint, r_uint_rev)
 
-//                let red = PixelData(a: a_uint, r: r_uint, g: g_uint, b: b_uint)
                 let red = PixelData(a: 255, r: r_uint_rev, g: g_uint_rev, b: b_uint_rev)
                 pixels.append(red)
             }
