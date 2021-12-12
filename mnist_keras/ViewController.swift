@@ -71,7 +71,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 fatalError("Could not Convert")
             }
             
-            imagePrediction(image: reverseimage)
+            let preimage = imagePrediction(image: reverseimage)
+            
+            predictLabel.text = preimage
         }
         
         dismiss(animated: true, completion: nil)
@@ -90,7 +92,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
-    func imagePrediction(image: CIImage) {
+    var preCount: String = ""
+    
+    func imagePrediction(image: CIImage) -> String {
         
         guard let coreMLModel = try? VNCoreMLModel(for: h5_model().model) else {
             fatalError("Loading CoreML Model Failed")
@@ -104,8 +108,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             print(results)
             
             if let classification = results.first {
-                self.predictLabel.text = "予測した数字は\(classification.identifier)です"
+//                self.predictLabel.text = "予測した数字は\(classification.identifier)です"
                 //                self.predictLabel.text = "\(classification.confidence)"
+                self.preCount = classification.identifier
             }
         }
         
@@ -116,6 +121,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         } catch {
             print(error)
         }
+        
+        return preCount
     }
     
     func imageFromARGB32Bitmap(pixels: [PixelData], width: Int, height: Int) -> UIImage? {

@@ -17,6 +17,7 @@
 		685D4BC42760A9FA00250C26 /* UIcolor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685D4BC32760A9FA00250C26 /* UIcolor.swift */; };
 		685D4BC62764DC0000250C26 /* DrawView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 685D4BC52764DC0000250C26 /* DrawView.storyboard */; };
 		685D4BC82764DE7800250C26 /* DrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685D4BC72764DE7800250C26 /* DrawViewController.swift */; };
+		685D4BCA2765DDA800250C26 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685D4BC92765DDA800250C26 /* Canvas.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		685D4BC32760A9FA00250C26 /* UIcolor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIcolor.swift; sourceTree = "<group>"; };
 		685D4BC52764DC0000250C26 /* DrawView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DrawView.storyboard; sourceTree = "<group>"; };
 		685D4BC72764DE7800250C26 /* DrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawViewController.swift; sourceTree = "<group>"; };
+		685D4BC92765DDA800250C26 /* Canvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,8 @@
 		685D4B982758F7AB00250C26 /* mnist_keras */ = {
 			isa = PBXGroup;
 			children = (
+				685D4BC92765DDA800250C26 /* Canvas.swift */,
+				685D4BC32760A9FA00250C26 /* UIcolor.swift */,
 				685D4BC0275EA8B900250C26 /* python_model */,
 				685D4B992758F7AB00250C26 /* AppDelegate.swift */,
 				685D4B9B2758F7AB00250C26 /* SceneDelegate.swift */,
@@ -75,7 +79,6 @@
 				685D4BA42758F7AD00250C26 /* LaunchScreen.storyboard */,
 				685D4BA72758F7AD00250C26 /* Info.plist */,
 				685D4BBE275D1FAD00250C26 /* h5_model.mlmodel */,
-				685D4BC32760A9FA00250C26 /* UIcolor.swift */,
 			);
 			path = mnist_keras;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				685D4BCA2765DDA800250C26 /* Canvas.swift in Sources */,
 				685D4BC82764DE7800250C26 /* DrawViewController.swift in Sources */,
 				685D4B9E2758F7AB00250C26 /* ViewController.swift in Sources */,
 				685D4BBF275D1FAD00250C26 /* h5_model.mlmodel in Sources */,

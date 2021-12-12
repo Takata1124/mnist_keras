@@ -7,58 +7,41 @@
 
 import UIKit
 
-class Canvas: UIView {
-    
-    override func draw(_ rect: CGRect) {
-        super.draw(rect)
-        
-        guard let context = UIGraphicsGetCurrentContext() else { return }
-        
-        context.setStrokeColor(UIColor.black.cgColor)
-        context.setLineWidth(10)
-        context.setLineCap(.butt)
-        
-        lines.forEach { (line) in
-            
-            for (i, p) in line.enumerated() {
-                
-                if i == 0 {
-                    context.move(to: p)
-                } else {
-                    context.addLine(to: p)
-                }
-            }
-        }
-
-        context.strokePath()
-    }
-    
-//    var line = [CGPoint]()
-    var lines = [[CGPoint]]()
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        lines.append([CGPoint]())
-    }
-    
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let point = touches.first?.location(in: nil) else { return }
-        print(point)
-        
-        var cgpoint = CGPoint(x: Int(point.x) - 40, y: Int(point.y - 50))
-        
-        guard var lastLine = lines.popLast() else { return }
-        lastLine.append(cgpoint)
-        lines.append(lastLine)
-        
-        setNeedsDisplay()
-    }
-}
-
-class DrawViewController: UIViewController {
+class DrawViewController: UIViewController, UINavigationBarDelegate {
     
     @IBOutlet weak var drawImage: UIImageView!
+    @IBOutlet weak var predictionLabel: UILabel!
+    @IBOutlet weak var navbar: UINavigationBar!
     
     let canvas = Canvas()
+    
+    let clearButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Clear", for: .normal)
+        button.titleLabel?.font = .boldSystemFont(ofSize: 14)
+        button.addTarget(self, action: #selector(handleClear), for: .touchUpInside)
+        return button
+    }()
+//
+    @objc func handleClear() {
+        
+        canvas.clear()
+        
+        drawImage.image = nil
+        predictionLabel.text = ""
+    }
+    
+    fileprivate func SetUpLayout() {
+        let stackView = UIStackView(arrangedSubviews: [
+            clearButton
+        ])
+
+        view.addSubview(stackView)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,18 +50,46 @@ class DrawViewController: UIViewController {
         
         view.addSubview(canvas)
         canvas.backgroundColor = .white
-//        canvas.layer.borderColor = UIColor.black.cgColor
-//        canvas.layer.borderWidth = 5
         canvas.frame = CGRect(x: unit/2 , y:unit, width:unit*3, height:unit*3)
+        
+        SetUpLayout()
+        
+        navbar.items![0].title = "Drawing_Model"
+        navbar.delegate = self
+        navbar.barTintColor = .rgb(red: 200, green: 200, blue: 200)
     }
+    
+    func position(for bar: UIBarPositioning) -> UIBarPosition {
+        return .topAttached
+    }
+    
+    var preCount: String = ""
     
     @IBAction func exchangeButton(_ sender: Any) {
         
+        let viewController = ViewController()
         let myImage = canvas.GetImage() as UIImage
         
-        drawImage.image = myImage
+        let imgSize: Int = 28
+        let imageShape: CGSize = CGSize(width: imgSize, height: imgSize)
+        let imagePixel = myImage.resize(to: imageShape).getPixelBuffer()
+        
+        let reverseimage = viewController.imageFromARGB32Bitmap(pixels: imagePixel, width: 28, height: 28)
+        
+        guard let reversedimage = CIImage(image: reverseimage ?? myImage) else {
+            fatalError("Could not Convert")
+        }
+        
+        drawImage.image = reverseimage
+
+        preCount = viewController.imagePrediction(image: reversedimage)
+        predictionLabel.text = preCount
     }
     
+    @IBAction func CameraViewButton(_ sender: Any) {
+        
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 extension UIView {

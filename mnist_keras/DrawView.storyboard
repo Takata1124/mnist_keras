@@ -20,12 +20,16 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Title" id="1ts-br-9r7">
-                                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="UZa-QU-YhK"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="list.bullet" catalog="system" id="24k-D5-Fge">
+                                            <connections>
+                                                <action selector="CameraViewButton:" destination="Y6W-OH-hqX" id="Hx9-Cf-a7c"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0RF-cj-kC8">
-                                <rect key="frame" x="100" y="781" width="214" height="31"/>
+                                <rect key="frame" x="173.5" y="756" width="67" height="31"/>
                                 <color key="backgroundColor" red="0.7843137255" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
@@ -49,17 +53,25 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRs-eR-hwI">
+                                <rect key="frame" x="100" y="710" width="214" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QfP-7o-Kc3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="0RF-cj-kC8" firstAttribute="leading" secondItem="QfP-7o-Kc3" secondAttribute="leading" constant="100" id="AAC-vc-vyR"/>
                             <constraint firstItem="4ur-IN-WbG" firstAttribute="top" secondItem="QfP-7o-Kc3" secondAttribute="top" id="IqG-fB-nUt"/>
+                            <constraint firstItem="QfP-7o-Kc3" firstAttribute="trailing" secondItem="aRs-eR-hwI" secondAttribute="trailing" constant="100" id="Irw-50-sKd"/>
+                            <constraint firstItem="0RF-cj-kC8" firstAttribute="top" secondItem="aRs-eR-hwI" secondAttribute="bottom" constant="25" id="LYx-dj-Idi"/>
                             <constraint firstItem="aBJ-oQ-RJD" firstAttribute="centerX" secondItem="vod-mj-vOz" secondAttribute="centerX" id="NaW-zB-DCN"/>
-                            <constraint firstItem="QfP-7o-Kc3" firstAttribute="trailing" secondItem="0RF-cj-kC8" secondAttribute="trailing" constant="100" id="Vq9-6v-VET"/>
+                            <constraint firstItem="0RF-cj-kC8" firstAttribute="centerX" secondItem="vod-mj-vOz" secondAttribute="centerX" id="VAX-rG-ofj"/>
                             <constraint firstItem="aI2-nN-K8z" firstAttribute="leading" secondItem="QfP-7o-Kc3" secondAttribute="leading" id="W0C-F1-yDG"/>
+                            <constraint firstItem="aRs-eR-hwI" firstAttribute="leading" secondItem="QfP-7o-Kc3" secondAttribute="leading" constant="100" id="ahj-D1-QpG"/>
                             <constraint firstItem="aBJ-oQ-RJD" firstAttribute="centerY" secondItem="vod-mj-vOz" secondAttribute="centerY" constant="100" id="axR-We-jzC"/>
-                            <constraint firstItem="QfP-7o-Kc3" firstAttribute="bottom" secondItem="0RF-cj-kC8" secondAttribute="bottom" constant="50" id="hXt-bJ-KVs"/>
+                            <constraint firstItem="QfP-7o-Kc3" firstAttribute="bottom" secondItem="0RF-cj-kC8" secondAttribute="bottom" constant="75" id="hXt-bJ-KVs"/>
                             <constraint firstItem="4ur-IN-WbG" firstAttribute="leading" secondItem="QfP-7o-Kc3" secondAttribute="leading" id="kwz-wa-CYa"/>
                             <constraint firstItem="aI2-nN-K8z" firstAttribute="top" secondItem="4ur-IN-WbG" secondAttribute="bottom" id="qbN-wf-d2c"/>
                             <constraint firstItem="4ur-IN-WbG" firstAttribute="trailing" secondItem="QfP-7o-Kc3" secondAttribute="trailing" id="yzS-Fm-hgB"/>
@@ -68,6 +80,8 @@
                     </view>
                     <connections>
                         <outlet property="drawImage" destination="aBJ-oQ-RJD" id="a8N-Ad-koC"/>
+                        <outlet property="navbar" destination="4ur-IN-WbG" id="odZ-cE-BE3"/>
+                        <outlet property="predictionLabel" destination="aRs-eR-hwI" id="ao0-wA-ifA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -76,6 +90,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="list.bullet" catalog="system" width="128" height="88"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
