@@ -29,6 +29,11 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Title" id="w98-Lx-J8L">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" id="j6n-6u-Npz">
+                                            <connections>
+                                                <action selector="drawTapped:" destination="BYZ-38-t0r" id="x3a-iC-rZP"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="haJ-ne-sV8">
                                             <connections>
                                                 <action selector="cameraTap:" destination="BYZ-38-t0r" id="xWd-lo-h5t"/>

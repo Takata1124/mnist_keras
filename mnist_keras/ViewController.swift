@@ -23,7 +23,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var predictLabel: UILabel!
     @IBOutlet weak var revisedImage: UIImageView!
     @IBOutlet weak var navbar: UINavigationBar!
-    
     @IBOutlet weak var shootLabel: UILabel!
     @IBOutlet weak var revisedLabel: UILabel!
     
@@ -153,6 +152,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
         return UIImage(cgImage: cgim)
     }
+    
+    @IBAction func drawTapped(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "DrawView", bundle: nil)
+        let drawViewController = storyboard.instantiateViewController(withIdentifier: "DrawViewController")
+        drawViewController.modalPresentationStyle = .fullScreen
+        self.present(drawViewController, animated: true, completion: nil)
+    }
+    
 }
 
 extension UIImage {
@@ -166,8 +174,9 @@ extension UIImage {
         return resizedImage
     }
     
-    //画像をpixelBufferに変換。ただし参考サイトのコードを一部変更して、
-    //ピクセル値を二値化はせずに0.0〜1.0の値として扱う（元々のモデルに合わせる）
+    //画像をpixelDataに変換。
+    //Mnistのデータは数字が白で背景が黒のため、RGBを反転
+    
     func getPixelBuffer() -> [PixelData]
     {
         guard let cgImage = self.cgImage else {
@@ -187,19 +196,19 @@ extension UIImage {
                 let r = CGFloat(pixelData[pixelInfo])
                 let g = CGFloat(pixelData[pixelInfo+1])
                 let b = CGFloat(pixelData[pixelInfo+2])
-                let a = CGFloat(pixelData[pixelInfo+3])
+//                let a = CGFloat(pixelData[pixelInfo+3])
                 
                 let r_uint: UInt8 = UInt8.init(r)
                 let g_uint: UInt8 = UInt8.init(g)
                 let b_uint: UInt8 = UInt8.init(b)
-                let a_uint: UInt8 = UInt8.init(a)
+//                let a_uint: UInt8 = UInt8.init(a)
                 
                 let uint_change: UInt8 = UInt8.init(Float(255))
                 
                 let r_uint_rev: UInt8 = uint_change - r_uint
                 let g_uint_rev: UInt8 = uint_change - g_uint
                 let b_uint_rev: UInt8 = uint_change - b_uint
-                let a_uint_rev: UInt8 = uint_change - a_uint
+//                let a_uint_rev: UInt8 = uint_change - a_uint
 
                 let red = PixelData(a: 255, r: r_uint_rev, g: g_uint_rev, b: b_uint_rev)
                 pixels.append(red)
