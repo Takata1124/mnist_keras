@@ -14,13 +14,22 @@
 		685D4BA32758F7AD00250C26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 685D4BA22758F7AD00250C26 /* Assets.xcassets */; };
 		685D4BA62758F7AD00250C26 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 685D4BA42758F7AD00250C26 /* LaunchScreen.storyboard */; };
 		685D4BBF275D1FAD00250C26 /* h5_model.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 685D4BBE275D1FAD00250C26 /* h5_model.mlmodel */; };
-		685D4BC42760A9FA00250C26 /* UIcolor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685D4BC32760A9FA00250C26 /* UIcolor.swift */; };
+		685D4BC42760A9FA00250C26 /* UIcolor_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685D4BC32760A9FA00250C26 /* UIcolor_Extension.swift */; };
 		685D4BC62764DC0000250C26 /* DrawView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 685D4BC52764DC0000250C26 /* DrawView.storyboard */; };
 		685D4BC82764DE7800250C26 /* DrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685D4BC72764DE7800250C26 /* DrawViewController.swift */; };
 		685D4BCA2765DDA800250C26 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685D4BC92765DDA800250C26 /* Canvas.swift */; };
+		685D4BCC27663F1500250C26 /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685D4BCB27663F1500250C26 /* SideMenu.swift */; };
+		685D4BD02767E86000250C26 /* Caluculator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 685D4BCF2767E86000250C26 /* Caluculator.storyboard */; };
+		685D4BD22767E88800250C26 /* CaluculateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685D4BD12767E88800250C26 /* CaluculateViewController.swift */; };
+		68608EEB2778A7270079D668 /* h5_mark_model.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 68608EEA2778A7270079D668 /* h5_mark_model.mlmodel */; };
+		68DCA03E27CCB90C00B69D85 /* UIImage_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DCA03D27CCB90C00B69D85 /* UIImage_Extension.swift */; };
+		68DCA04027CCBA5F00B69D85 /* UIView_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DCA03F27CCBA5F00B69D85 /* UIView_Extension.swift */; };
+		93C6A347527D40DA65DFBC56 /* Pods_mnist_keras.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 564442663CA2B630E34529F6 /* Pods_mnist_keras.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		564442663CA2B630E34529F6 /* Pods_mnist_keras.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mnist_keras.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		61FE62F25941848A60F24A44 /* Pods-mnist_keras.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mnist_keras.release.xcconfig"; path = "Target Support Files/Pods-mnist_keras/Pods-mnist_keras.release.xcconfig"; sourceTree = "<group>"; };
 		685D4B962758F7AB00250C26 /* mnist_keras.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mnist_keras.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		685D4B992758F7AB00250C26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		685D4B9B2758F7AB00250C26 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,10 +39,17 @@
 		685D4BA52758F7AD00250C26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		685D4BA72758F7AD00250C26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		685D4BBE275D1FAD00250C26 /* h5_model.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = h5_model.mlmodel; sourceTree = "<group>"; };
-		685D4BC32760A9FA00250C26 /* UIcolor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIcolor.swift; sourceTree = "<group>"; };
+		685D4BC32760A9FA00250C26 /* UIcolor_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIcolor_Extension.swift; sourceTree = "<group>"; };
 		685D4BC52764DC0000250C26 /* DrawView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DrawView.storyboard; sourceTree = "<group>"; };
 		685D4BC72764DE7800250C26 /* DrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawViewController.swift; sourceTree = "<group>"; };
 		685D4BC92765DDA800250C26 /* Canvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
+		685D4BCB27663F1500250C26 /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
+		685D4BCF2767E86000250C26 /* Caluculator.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Caluculator.storyboard; sourceTree = "<group>"; };
+		685D4BD12767E88800250C26 /* CaluculateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaluculateViewController.swift; sourceTree = "<group>"; };
+		68608EEA2778A7270079D668 /* h5_mark_model.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = h5_mark_model.mlmodel; sourceTree = "<group>"; };
+		68DCA03D27CCB90C00B69D85 /* UIImage_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage_Extension.swift; sourceTree = "<group>"; };
+		68DCA03F27CCBA5F00B69D85 /* UIView_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView_Extension.swift; sourceTree = "<group>"; };
+		D098940ED6EF6CDEEC50DCD8 /* Pods-mnist_keras.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mnist_keras.debug.xcconfig"; path = "Target Support Files/Pods-mnist_keras/Pods-mnist_keras.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,17 +57,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93C6A347527D40DA65DFBC56 /* Pods_mnist_keras.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		157DE4F0EA9B520355C9819B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				564442663CA2B630E34529F6 /* Pods_mnist_keras.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		685D4B8D2758F7AB00250C26 = {
 			isa = PBXGroup;
 			children = (
 				685D4B982758F7AB00250C26 /* mnist_keras */,
 				685D4B972758F7AB00250C26 /* Products */,
+				D092A7C61C519FBD868D7B3B /* Pods */,
+				157DE4F0EA9B520355C9819B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,28 +93,67 @@
 		685D4B982758F7AB00250C26 /* mnist_keras */ = {
 			isa = PBXGroup;
 			children = (
-				685D4BC92765DDA800250C26 /* Canvas.swift */,
-				685D4BC32760A9FA00250C26 /* UIcolor.swift */,
-				685D4BC0275EA8B900250C26 /* python_model */,
+				68DCA04227CCBAB000B69D85 /* ViewController */,
+				68DCA04127CCBA9100B69D85 /* Storyboard */,
+				685D4BCE276643E100250C26 /* Extensions */,
+				685D4BCD276643D000250C26 /* Class */,
 				685D4B992758F7AB00250C26 /* AppDelegate.swift */,
 				685D4B9B2758F7AB00250C26 /* SceneDelegate.swift */,
-				685D4B9D2758F7AB00250C26 /* ViewController.swift */,
-				685D4BC72764DE7800250C26 /* DrawViewController.swift */,
-				685D4B9F2758F7AB00250C26 /* Main.storyboard */,
-				685D4BC52764DC0000250C26 /* DrawView.storyboard */,
 				685D4BA22758F7AD00250C26 /* Assets.xcassets */,
-				685D4BA42758F7AD00250C26 /* LaunchScreen.storyboard */,
 				685D4BA72758F7AD00250C26 /* Info.plist */,
 				685D4BBE275D1FAD00250C26 /* h5_model.mlmodel */,
+				68608EEA2778A7270079D668 /* h5_mark_model.mlmodel */,
 			);
 			path = mnist_keras;
 			sourceTree = "<group>";
 		};
-		685D4BC0275EA8B900250C26 /* python_model */ = {
+		685D4BCD276643D000250C26 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				685D4BCB27663F1500250C26 /* SideMenu.swift */,
+				685D4BC92765DDA800250C26 /* Canvas.swift */,
 			);
-			path = python_model;
+			path = Class;
+			sourceTree = "<group>";
+		};
+		685D4BCE276643E100250C26 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				685D4BC32760A9FA00250C26 /* UIcolor_Extension.swift */,
+				68DCA03D27CCB90C00B69D85 /* UIImage_Extension.swift */,
+				68DCA03F27CCBA5F00B69D85 /* UIView_Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		68DCA04127CCBA9100B69D85 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				685D4B9F2758F7AB00250C26 /* Main.storyboard */,
+				685D4BC52764DC0000250C26 /* DrawView.storyboard */,
+				685D4BCF2767E86000250C26 /* Caluculator.storyboard */,
+				685D4BA42758F7AD00250C26 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		68DCA04227CCBAB000B69D85 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				685D4B9D2758F7AB00250C26 /* ViewController.swift */,
+				685D4BC72764DE7800250C26 /* DrawViewController.swift */,
+				685D4BD12767E88800250C26 /* CaluculateViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		D092A7C61C519FBD868D7B3B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D098940ED6EF6CDEEC50DCD8 /* Pods-mnist_keras.debug.xcconfig */,
+				61FE62F25941848A60F24A44 /* Pods-mnist_keras.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -97,9 +163,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 685D4BAA2758F7AD00250C26 /* Build configuration list for PBXNativeTarget "mnist_keras" */;
 			buildPhases = (
+				3E5F29A9B1A39899E0E594D8 /* [CP] Check Pods Manifest.lock */,
 				685D4B922758F7AB00250C26 /* Sources */,
 				685D4B932758F7AB00250C26 /* Frameworks */,
 				685D4B942758F7AB00250C26 /* Resources */,
+				DA6885F11E6528F8A081EED9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				685D4BA62758F7AD00250C26 /* LaunchScreen.storyboard in Resources */,
+				685D4BD02767E86000250C26 /* Caluculator.storyboard in Resources */,
 				685D4BC62764DC0000250C26 /* DrawView.storyboard in Resources */,
 				685D4BA32758F7AD00250C26 /* Assets.xcassets in Resources */,
 				685D4BA12758F7AB00250C26 /* Main.storyboard in Resources */,
@@ -157,6 +226,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3E5F29A9B1A39899E0E594D8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-mnist_keras-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA6885F11E6528F8A081EED9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-mnist_keras/Pods-mnist_keras-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-mnist_keras/Pods-mnist_keras-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mnist_keras/Pods-mnist_keras-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		685D4B922758F7AB00250C26 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -164,11 +275,16 @@
 			files = (
 				685D4BCA2765DDA800250C26 /* Canvas.swift in Sources */,
 				685D4BC82764DE7800250C26 /* DrawViewController.swift in Sources */,
+				68DCA04027CCBA5F00B69D85 /* UIView_Extension.swift in Sources */,
+				685D4BD22767E88800250C26 /* CaluculateViewController.swift in Sources */,
 				685D4B9E2758F7AB00250C26 /* ViewController.swift in Sources */,
+				68608EEB2778A7270079D668 /* h5_mark_model.mlmodel in Sources */,
+				685D4BCC27663F1500250C26 /* SideMenu.swift in Sources */,
 				685D4BBF275D1FAD00250C26 /* h5_model.mlmodel in Sources */,
 				685D4B9A2758F7AB00250C26 /* AppDelegate.swift in Sources */,
 				685D4B9C2758F7AB00250C26 /* SceneDelegate.swift in Sources */,
-				685D4BC42760A9FA00250C26 /* UIcolor.swift in Sources */,
+				685D4BC42760A9FA00250C26 /* UIcolor_Extension.swift in Sources */,
+				68DCA03E27CCB90C00B69D85 /* UIImage_Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +428,7 @@
 		};
 		685D4BAB2758F7AD00250C26 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D098940ED6EF6CDEEC50DCD8 /* Pods-mnist_keras.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -323,7 +440,7 @@
 				INFOPLIST_KEY_NSCameraUsageDescription = "カメラにアクセスします";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = DrawView;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -341,6 +458,7 @@
 		};
 		685D4BAC2758F7AD00250C26 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61FE62F25941848A60F24A44 /* Pods-mnist_keras.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -352,7 +470,7 @@
 				INFOPLIST_KEY_NSCameraUsageDescription = "カメラにアクセスします";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = DrawView;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
