@@ -97,7 +97,6 @@ class DrawViewController: UIViewController, UINavigationBarDelegate {
         }
         
         let handler = VNImageRequestHandler(ciImage: image)
-        
         do {
             try handler.perform([request])
         } catch {
